@@ -121,7 +121,10 @@ http://localhost:8080/
 ```
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](src/main/resources/image/webpage_list_all_trades.jpg)
+![App Screenshot](src/main/resources/image/Postman_POST_request.jpg)
+![App Screenshot](src/main/resources/image/In_memory_DB_H2 Console_login.jpg)
+![App Screenshot](src/main/resources/image/H2_Console_show_data.jpg)
 
 
 ## Run Locally
