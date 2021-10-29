@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Currency Trades</title>
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="app">
+    <h1>All Currency Trades</h1>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Row ID</th>
+                <th>User ID</th>
+                <th>Currency From</th>
+                <th>Currency To</th>
+                <th>Amount Buy</th>
+                <th>Amount Sell</th>
+                <th>Time Placed</th>
+                <th>Originating Country</th>
+                <th>Last Updated</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="trade in trades">
+                <td>{{ trade.id }}</td>
+                <td>{{ trade.userId }}</td>
+                <td>{{ trade.currencyFrom }}</td>
+                <td>{{ trade.currencyTo }}</td>
+                <td>{{ trade.amountBuy }}</td>
+                <td>{{ trade.amountSell }}</td>
+                <td>{{ trade.timePlaced }}</td>
+                <td>{{ trade.originatingCountry }}</td>
+                <td>{{ trade.updatedAt }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const apiURL = "http://localhost:8080/currencytrade/all"
+        new Vue({
+            el: '#app',
+            data() {
+                return {
+                    trades: []
+                }
+            },
+            created() {
+                fetch(apiURL)
+                    .then(response => {
+                        return response.json();
+                    })
+                    .then(trades => {
+                        this.trades = trades;
+                    })
+            }
+        })
+    </script>
+</body>
+</html>
