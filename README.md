@@ -132,7 +132,7 @@ http://localhost:8080/
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/whokc-github/currencyTrade.git
 ```
 
 Go to the project directory
