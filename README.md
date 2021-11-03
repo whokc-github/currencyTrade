@@ -138,7 +138,7 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd mkt_trade_processor
+  cd currencyTrade
 ```
 
 Start the server
